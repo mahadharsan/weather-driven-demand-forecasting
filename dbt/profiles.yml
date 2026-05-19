@@ -1,0 +1,12 @@
+weather_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: climate-de-pipeline
+      dataset: weather_staging
+      keyfile: "D:/Personal projects/climate_data_eng/config/gcp_credentials.json"
+      location: us-central1
+      threads: 1
+      timeout_seconds: 300

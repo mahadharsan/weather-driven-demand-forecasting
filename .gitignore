@@ -1,0 +1,33 @@
+# credentials
+config/gcp_credentials.json
+.env
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+.pytest_cache/
+.mypy_cache/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/.dbt/
+
+# logs
+logs/
+*.log
+
+# editor/IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# local temp
+.tmp_dagster_home_*/

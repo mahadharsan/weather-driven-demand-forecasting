@@ -1,0 +1,24 @@
+gcp:
+  project_id: "climate-de-pipeline"
+  bucket_name: "climate-de-la-bronze-maha"
+  dataset_id: "weather_raw"
+  credentials_path: "D:/Personal projects/climate_data_eng/config/gcp_credentials.json"
+
+api:
+  base_url: "https://archive-api.open-meteo.com/v1/archive"
+  latitude: 34.0522
+  longitude: -118.2437
+  city: "Los Angeles"
+  start_date: "2023-01-01"
+  end_date: "2025-01-01"
+  timezone: "America/Los_Angeles"
+  variables:
+    - "temperature_2m_max"
+    - "temperature_2m_min"
+    - "precipitation_sum"
+    - "wind_speed_10m_max"
+    - "weather_code"
+
+pipeline:
+  raw_table: "weather_raw_los_angeles"
+  bronze_prefix: "bronze/weather/los_angeles"

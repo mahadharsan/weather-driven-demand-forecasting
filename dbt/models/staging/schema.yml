@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: weather_raw
+    project: climate-de-pipeline
+    dataset: weather_raw
+    tables:
+      - name: weather_raw_los_angeles
+
+models:
+  - name: stg_weather
+    description: "Silver layer: cleaned and cast weather data for Los Angeles"
+    columns:
+      - name: date
+        description: "Date of observation as DATE type"
+        tests:
+          - not_null
+          - unique
+      - name: city
+        description: "City name"
+        tests:
+          - not_null
+      - name: temperature_max
+        description: "Maximum daily temperature in Celsius rounded to 1 decimal"
+        tests:
+          - not_null
+      - name: temperature_min
+        description: "Minimum daily temperature in Celsius rounded to 1 decimal"
+        tests:
+          - not_null

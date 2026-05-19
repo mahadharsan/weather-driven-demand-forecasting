@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: mart_weather_daily
+    description: "Gold layer: analytics-ready weather features for LA demand forecasting"
+    columns:
+      - name: date
+        tests:
+          - not_null
+          - unique
+      - name: temperature_range
+        tests:
+          - not_null
+      - name: anomaly_flag
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Winter', 'Spring', 'Summer', 'Fall']
+      - name: weather_description
+        description: "Human readable WMO weather condition label"
+        tests:
+          - not_null
