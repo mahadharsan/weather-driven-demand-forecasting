@@ -7,6 +7,12 @@ sources:
     tables:
       - name: weather_raw_los_angeles
 
+  - name: sales_raw
+    project: climate-de-pipeline
+    dataset: sales_raw
+    tables:
+      - name: sales_raw_ca3_foods
+
 models:
   - name: stg_weather
     description: "Silver layer: cleaned and cast weather data for Los Angeles"
@@ -26,5 +32,16 @@ models:
           - not_null
       - name: temperature_min
         description: "Minimum daily temperature in Celsius rounded to 1 decimal"
+        tests:
+          - not_null
+
+  - name: stg_sales
+    description: "Silver layer: cleaned CA_3 FOODS daily sales data"
+    columns:
+      - name: date
+        tests:
+          - not_null
+          - unique
+      - name: units_sold
         tests:
           - not_null

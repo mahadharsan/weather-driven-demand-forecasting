@@ -92,6 +92,7 @@ final AS (
         season,
         is_extreme_heat,
         is_heavy_rain,
+        weather_description,
         CASE
             WHEN monthly_stddev_temp IS NOT NULL
             AND ABS(temperature_max - monthly_avg_temp) > 2 * monthly_stddev_temp

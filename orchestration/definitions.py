@@ -8,13 +8,13 @@ from dagster_dbt import DbtCliResource, dbt_assets, DbtProject
 from pathlib import Path
 from orchestration.assets import raw_weather_parquet, raw_weather_bq_table
 
-# Point Dagster to your dbt project folder
+# Point Dagster to dbt project folder
 dbt_project = DbtProject(
     project_dir=Path(__file__).parent.parent / "dbt"
 )
 
-# This single decorator reads your dbt manifest and creates
-# Dagster assets from ALL your dbt models automatically
+# This single decorator reads dbt manifest and creates
+# Dagster assets from ALL dbt models automatically
 # stg_weather and mart_weather_daily become assets with zero extra code
 @dbt_assets(manifest=dbt_project.manifest_path)
 def weather_dbt_assets(context, dbt: DbtCliResource):

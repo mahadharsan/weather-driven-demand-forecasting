@@ -9,8 +9,8 @@ api:
   latitude: 34.0522
   longitude: -118.2437
   city: "Los Angeles"
-  start_date: "2023-01-01"
-  end_date: "2025-01-01"
+  start_date: "2011-01-01"
+  end_date: "2016-12-31"
   timezone: "America/Los_Angeles"
   variables:
     - "temperature_2m_max"

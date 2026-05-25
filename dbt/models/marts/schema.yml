@@ -23,3 +23,14 @@ models:
         description: "Human readable WMO weather condition label"
         tests:
           - not_null
+
+  - name: mart_demand_features
+    description: "Gold layer: joined weather and sales features for CA_3 demand forecasting"
+    columns:
+      - name: date
+        tests:
+          - not_null
+          - unique
+      - name: units_sold
+        tests:
+          - not_null
