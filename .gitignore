@@ -31,3 +31,5 @@ Thumbs.db
 
 # local temp
 .tmp_dagster_home_*/
+
+data/
